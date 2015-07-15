@@ -8,8 +8,8 @@ $(document).ready(function(){
         localStorage.setItem("subject", nom);
         localStorage.setItem("identi", mail);
         
-       document.getElementById("nametxt").value = "";
-       document.getElementById("emailtxt").value = "";
+        /*document.getElementById("nametxt").value = "";
+        document.getElementById("emailtxt").value = "";*/
         
       
     });
@@ -24,8 +24,8 @@ $(document).ready(function(){
         var email = localStorage.getItem("identi");        
                 
         //Mostrar datos almacenados      
-        document.getElementById("name").innerHTML= name;
-        document.getElementById("email").innerHTML= email;            
+        document.getElementById("nme").innerHTML= name;
+        document.getElementById("emil").innerHTML= email;            
         
     });   
 });
