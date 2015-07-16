@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+
+<body>
+    
+    <form >
+        First name: <input type="text" id="nombre" placeholder="Name"><br>
+        eMail: <input type="email" id="correo" placeholder="Email"><br>
+
+        <button onclick="save()" type="submit">Submit</button><br>
+        <button onclick="retrieve()" type="submit">Retrieve</button><br>     
+
+        <p id="cm"></p>
+        <p id="crr"></p>
+    
+        
+    </form>
+    
+<script>
+        
+    if(typeof(Storage) !== "undefined") {
+        
+        function save(){
+          var nom=  document.getElementById("nombre").value;
+          var cr= document.getElementById("correo").value;
+   
+            localStorage.setItem("name",nom);
+            localStorage.setItem("email",cr);
+        }
+    
+        function retrieve(){
+         var co = localStorage.getItem("name");
+         var em = localStorage.getItem("email");
+        
+        document.getElementById("cm").innerHTML = co;
+        document.getElementById("crr").innerHTML = em;
+        }
+        
+    }   else {
+    
+        alert("I am an alert box!");
+        }        
+        
+        
+        
+</script>    
+    
+    
+    </body>
+    
+</html>    
