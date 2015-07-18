@@ -1,32 +1,22 @@
-$(document).ready(function(){
-    $('#guardar').click(function(){
 
-    //funcion para captura en inputs
-    // var nom = document.getElementById("nametxt").value;
-    var nom = $('#nametxt').val();
-    var mail = $("#emailtxt").val();
+/*
+ * Guardemos en localStorage cuando el formulario haya sido enviado.
+ */
 
-        localStorage.setItem("subject", nom);
-        localStorage.setItem("identi", mail);
+// Submit es la función jQuery que permite pillar cuando el usuario le dio click en enviar a un formulario
+$('form').submit(function(e){   // Variable e corresponde al evento de enviar formulario
+  e.preventDefault();           // Prevenir que al momento de dar click a enviar se recargue la página
+  var value2 = $('#emailtxt').val();
 
-        /*document.getElementById("nametxt").value = "";
-        document.getElementById("emailtxt").value = "";*/
+  localStorage.setItem("subject", $('#nametxt').val()); // Guardar valor en subject
+  localStorage.setItem("identi", $('#emailtxt').val()); // Guardar valor en subject
 
-
-    });
+  console.log('Almacenamiento local exitoso. Agregados valores: subject('+$('#nametxt').val()+'), identi('+$('#emailtxt').val()+')');
+  
 });
 
-//funcion obtener
-$(document).ready(function(){
-    $('#result').click(function() {
-
-        //Obtener datos almacenados
-        var name = localStorage.getItem("subject");
-        var email = localStorage.getItem("identi");
-
-        //Mostrar datos almacenados
-        $("#nme").html(name);
-        $("#emil").html(email);            
-
-    });
+$('#result').on('click', function(e){ // e es el evento de click nuevamente
+  e.preventDefault();
+  $('#nme').val(localStorage.getItem('subject'));
+  $('#emil').val(localStorage.getItem('identi'));
 });
