@@ -6,52 +6,52 @@
         <title>Xfiles</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="js/jquery-2.1.4.min.js"></script>
-        <script src="js/fnbuttons.js"></script>
-        
-        
     </head>
     <body>
-        
+
         <form class="form-horizontal col-md-offset-4 col-md-4" >
             <h2 class="titulo">Join</h2>
-            
+
             <div class="form-group">
                 <div class="col-sm-10 col-md-12">
                 <input type="text"  class="form-control" id="nametxt" placeholder="Name">
                 </div>
             </div>
-            
+
             <div class="form-group">
               <div class="col-sm-10 col-md-12">
                 <input type="email" class="form-control" id="emailtxt" placeholder="Email">
                 </div>
             </div>
-            
+
             <div class="btn-group col-lg-8 col-lg-offset-4" role="group">
-                <button type="button" id="guardar" class="btn btn-default ">Subscribe</button>
+                <button type="submit" id="guardar" class="btn btn-default ">Subscribe</button>
                 </div>
             <br><br>
-                                                           
+        </form>
+
+        <div class="form-horizontal col-md-offset-4 col-md-4" >
             <div class="form-group">
                 <div class="col-sm-10 col-md-12">
-                <input type="text"  class="form-control" id="nme" placeholder="">
+                <input type="text" name="nme" class="form-control" id="nme" placeholder="">
                 </div>
             </div>
-            
+
             <div class="form-group">
                 <div class="col-sm-10 col-md-12">
-                <input type="text" class="form-control" id="emil" placeholder="">
+                <input type="text" name="emil" class="form-control" id="emil" placeholder="">
                 </div>
-            </div> 
-            
+            </div>
+
             <div class="btn-group col-lg-offset-4" role="group">
-                <button type="button" id="result" class="btn btn-default ">Result</button>
+                <button type="submit" id="result" class="btn btn-default ">Result</button>
                 <button type="button" id="reset" class="btn btn-default ">Reset</button>
                 </div>
         <br><br>
-        </form>
-        
-    
+      </div>
+
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/fnbuttons.js"></script>
+
     </body>
 </html>
