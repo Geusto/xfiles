@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <title>Todo</title>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <style media="screen">
+          .tarea{
+            padding: 10px;
+            background: #F8F8F8;
+            border-bottom: 1px dashed #F0F0F0;
+          }
+          .tarea:hover{
+            background: yellow;
+          }
+        </style>
+    </head>
+    <body>
+
+        <div class="container" style="padding-bottom: 50px;">
+          <div class="row">
+            <div class="col-sm-push-4 col-sm-4">
+              <h1>Mis Tareas</h1>
+              <div id="controls" style="margin-bottom: 30px;">
+                <button class="btn btn-xs btn-danger" name="button">Borrar todas las tareas</button>
+              </div>
+              <div id="container">
+                <i>No tienes ninguna tarea.</i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: fixed; bottom: 0px; left: 0px; width: 100%; background: white; padding: 10px 0; box-shadow: 0px -2px 4px rgba(0,0,0,0.2;)">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-push-4 col-sm-4">
+                <div class="row">
+                  <form>
+                    <div class="col-xs-8">
+                      <input class="form-control" id="todo" type="text" name="text" value="" placeholder="Escribe tu tarea...">
+                    </div>
+                    <div class="col-xs-4">
+                      <input class="btn btn-primary" id="submit" type="submit" name="enviar" value="Agregar">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js" charset="utf-8"></script>
+        <script>
+          var addTarea = function(texto){
+            var markup = '<div class="tarea"><input type="checkbox" name="some_name"> <span>'+texto+'</span></div>';
+            $('#container').append(markup);
+          }
+          $('form').submit(function(e){
+            e.preventDefault();
+            addTarea($('#todo').val());
+            $('#todo').val('');
+          });
+        </script>
+    </body>
+</html>
